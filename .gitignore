@@ -25,6 +25,7 @@ bld/
 [Ll]og/
 deploy/
 WebApplication1/WebApplication1/web.config
+WebApplication1/WebApplication1/web.config.*
 
 # Visual Studio 2015 cache/options directory
 .vs/
