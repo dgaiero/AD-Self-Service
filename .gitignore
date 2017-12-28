@@ -8,6 +8,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+bfg-1.12.16.jar
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
