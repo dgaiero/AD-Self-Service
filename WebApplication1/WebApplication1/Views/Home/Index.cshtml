@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Welcome @User.GetGivenName()</h1>
+    <p class="lead">Use this portal to reset your password.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            Need to reset your password? Click the link below to chnage your AD password.
+        </p>
+        <p>@Html.ActionLink("Reset Password", "changePassword", "Account", new { area = "" }, new { @class = "btn btn-primary" })</p>
+    </div>
+</div>

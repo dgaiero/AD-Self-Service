@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Sign Out";
+}
+
+<div class="alert alert-info" role="alert">
+    <h4 class="alert-heading">Sign-out successful</h4>
+    <p>You have been successfully signed out.</p>
+    <hr>
+    <p class="mb-0">@Html.ActionLink("Click here to sign in", "SignIn", "Account", routeValues: null, htmlAttributes: new { @class = "alert-link" })</p>
+</div>
