@@ -1,34 +1,20 @@
-﻿<!DOCTYPE html>
+﻿@using WebApplication1.Utilities
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Firelight AD Self Service Portal</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @*@Styles.Render("~/Content/css")*@
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4=" crossorigin="anonymous"></script>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    @*@Scripts.Render("~/bundles/modernizr")*@
+
 
 </head>
 <body>
-    @*<nav class="navbar navbar-dark bg-primary">
-            <div class="container">
-                <div class="navbar-header">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    @Html.ActionLink("AD Password Reset Utility", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                </div>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <ul class="nav navbar-nav">
-                        <li class="nav-item">@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li class="nav-item">@Html.ActionLink("About", "About", "Home")</li>
-                        <li class="nav-item">@Html.ActionLink("Reset Password", "changePassword", "Account")</li>
-                    </ul>
-                    @Html.Partial("_LoginPartial")
-                </div>
-            </div>
-        </nav>*@
-
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         @Html.ActionLink("AD Self Service Utility", "Index", "Home", new { area = "" }, htmlAttributes: new { @class = "navbar-brand mb-0 h1" })
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,26 +26,26 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, htmlAttributes: new { @class = "nav-link" })</li>
-                <li class="nav-item">@Html.ActionLink("About", "About", "Home", new { area = "" }, htmlAttributes: new { @class = "nav-link" })</li>
-                <li class="nav-item">@Html.ActionLink("Reset Password", "changePassword", "Account", new { area = "" }, htmlAttributes: new { @class = "nav-link" })</li>
+                <li class="nav-item @Html.IsActive("Home", "Index")">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, htmlAttributes: new { @class = "nav-link" })</li>
+                <li class="nav-item @Html.IsActive("Home", "About")">@Html.ActionLink("About", "About", "Home", new { area = "" }, htmlAttributes: new { @class = "nav-link" })</li>
+                <li class="nav-item @Html.IsActive("Account", "changePassword")">@Html.ActionLink("Reset Password", "changePassword", "Account", new { area = "" }, htmlAttributes: new { @class = "nav-link" })</li>
             </ul>
             @Html.Partial("_LoginPartial")
         </div>
     </nav>
-
-
-
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
+        <footer class="footer">
             <p>&copy; @DateTime.Now.Year - Firelight</p>
         </footer>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @*@RenderSection("scripts", required: false)*@
+    @*@Scripts.Render("~/bundles/custom")*@
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 </body>
 </html>

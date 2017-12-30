@@ -74,7 +74,7 @@ namespace WebApplication1.Controllers
                     }
                     catch (System.DirectoryServices.AccountManagement.PasswordException)
                     {
-                        ViewBag.InformationMessage = String.Format("Your current password was entered incorrectly");
+                        ViewBag.InformationMessage = String.Format("Your current password was entered incorrectly or your password did not meet the complexity requirements.");
                         ViewBag.MessageBanner = "alert-info";
                         return View(userInformation);
                     }
